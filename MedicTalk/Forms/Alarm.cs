@@ -52,53 +52,59 @@ namespace MedicTalk
 			this.Hide();
 		}
 
-        // Once user has clicked on submit
-        private void Submit_Button_Click(object sender, EventArgs e)
-        {
-            Requests_Handler.Add_Timed_Request("alarm", Hour + ":" + Minute + ":00");
-            MessageBox.Show("You have added an alarm");
-
-            // Reload the alarms so the datagridview is updated
-            Display_Alarms();
-        }
-
-
-        // Once user has changed the hour
-        private void Hour_Changed(object sender, EventArgs e)
-        {
-            Hour = Hour_Box.Text;
-        }
-
-
-        // Once user changed the minute
-        private void Minute_Changed(object sender, EventArgs e)
-        {
-            Minute = Minute_Box.Text;
-        }
+		// Once user has clicked on submit
+		private void Submit_Button_Click(object sender, EventArgs e)
+		{
+			if (Hour_Box.Text == "Hour" || Minute_Box.Text == "Minutes")
+			{
+				MessageBox.Show("You must enter all details");
+			}
+			else
+			{
+				Requests_Handler.Add_Timed_Request("alarm", Hour + ":" + Minute + ":00");
+				MessageBox.Show("You have added an alarm");
+			}
+			// Reload the alarms so the datagridview is updated
+			Display_Alarms();
+		}
 
 
-        // Remove an alarm once a user has clicked on it
-        private void Remove_Alarm(object sender, DataGridViewCellEventArgs e)
-        {
+		// Once user has changed the hour
+		private void Hour_Changed(object sender, EventArgs e)
+		{
+			Hour = Hour_Box.Text;
+		}
 
-            // Get the value of the 1st column for the alarm
-            // that the user wants to delete
-            int TheRow = e.RowIndex;
-            string alarm_time = AlarmsList.Rows[TheRow].Cells[1].Value.ToString();
 
-            // If the alarm was deleted refresh the datagridview
-            if (Requests_Handler.Delete_Alarm(alarm_time))
-            {
-                Display_Alarms();
-            }
-        }
+		// Once user changed the minute
+		private void Minute_Changed(object sender, EventArgs e)
+		{
+			Minute = Minute_Box.Text;
+		}
 
-        // Load all alarms
-        private void Display_Alarms()
-        {
-            Requests_Handler.Show_Alarms();
-            AlarmsList.DataSource = Requests_Handler.DataTable;
-        }
+
+		// Remove an alarm once a user has clicked on it
+		private void Remove_Alarm(object sender, DataGridViewCellEventArgs e)
+		{
+
+			// Get the value of the 1st column for the alarm
+			// that the user wants to delete
+			int TheRow = e.RowIndex;
+			string alarm_time = AlarmsList.Rows[TheRow].Cells[1].Value.ToString();
+
+			// If the alarm was deleted refresh the datagridview
+			if (Requests_Handler.Delete_Alarm(alarm_time))
+			{
+				Display_Alarms();
+			}
+		}
+
+		// Load all alarms
+		private void Display_Alarms()
+		{
+			Requests_Handler.Show_Alarms();
+			AlarmsList.DataSource = Requests_Handler.DataTable;
+		}
 
 		private void button3_Click(object sender, EventArgs e)
 		{
