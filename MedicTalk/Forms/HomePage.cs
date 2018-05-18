@@ -12,7 +12,7 @@ namespace MedicTalk
 {
 	public partial class HomePage : Form
 	{
-		private Form1 form1;
+		public Form1 form1;
         private Alarm _alarm;
 		private Order_Food _orderFood;
 		private Shower _shower;
@@ -43,7 +43,7 @@ namespace MedicTalk
 		}
 
 		//Logout button
-		private void button4_Click(object sender, EventArgs e)
+		public void button4_Click(object sender, EventArgs e)
 		{
 			var _confirm = MessageBox.Show("Are you sure you want to log out?", "Confirm logout", MessageBoxButtons.YesNo);
 
@@ -116,7 +116,7 @@ namespace MedicTalk
         }
 		
 
-		private void button3_Click(object sender, EventArgs e)
+		public void button3_Click(object sender, EventArgs e)
 		{
 			MessageBox.Show("A nurse will be with you as soon as possible");
 			_emergencyRequest.CallRequest();

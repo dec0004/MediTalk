@@ -198,6 +198,10 @@ namespace MedicTalk
 			{
 				return _room;
 			}
+			set
+			{
+				_room = value;
+			}
 		}
 
 
@@ -207,12 +211,20 @@ namespace MedicTalk
 			{
 				return _section;
 			}
+			set
+			{
+				_section = value;
+			}
 		}
 		public string FirstNameProperty
 		{
 			get
 			{
 				return _firstName;
+			}
+			set
+			{
+				_firstName = value;
 			}
 		}
 
@@ -221,6 +233,10 @@ namespace MedicTalk
 			get
 			{
 				return _lastName;
+			}
+			set
+			{
+				_lastName = value;
 			}
 		}
 
