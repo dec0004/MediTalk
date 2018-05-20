@@ -109,6 +109,7 @@
     <Compile Include="Requests_Handler.cs" />
     <Compile Include="Tests\Requests_Handler_Unittest.cs" />
     <Compile Include="Tests\Shower_test.cs" />
+    <Compile Include="Tests\Visitor_Test.cs" />
     <EmbeddedResource Include="Forms\Alarm.resx">
       <DependentUpon>Alarm.cs</DependentUpon>
     </EmbeddedResource>
