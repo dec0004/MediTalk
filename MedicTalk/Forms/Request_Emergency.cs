@@ -47,7 +47,7 @@ namespace MedicTalk
 			{
 				time = "0" + time;
 			}
-			Debug.WriteLine(time);
+			
 
 			Requests_Handler.Add_Timed_Request("Emergency", time);
 			//connect.Insert("INSERT INTO Requests (Request_id, User_id, Type_of, Choice, First_Name, Last_Name, Section, Room) VALUES (Default, @Type_of, 'Emergency Request', 'Emergency', '@First_Name', '@Last_Name', '@Section', '@Room')", Parameters, ParameterValues);

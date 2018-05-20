@@ -31,7 +31,7 @@ namespace MediTalk
 			_home.form1.UserNameProperty = "edcfdf";
 
 			_home.button4_Click(new object(), EventArgs.Empty);
-			//_home._confirm = DialogResult.Yes;
+			_home.confirm = DialogResult.Yes;
 
 			Assert.AreEqual(_home.form1.UserNameProperty, "");
 			Assert.AreEqual(_home.form1.PasswordProperty, "");
@@ -49,26 +49,26 @@ namespace MediTalk
 			_home.form1.UserNameProperty = "edcfdf";
 
 			_home.button4_Click(new object(), EventArgs.Empty);
-			//_home._confirm = DialogResult.Yes;
+			_home.confirm = DialogResult.Yes;
 			Assert.AreEqual(_home.form1.Username_Textbox.Text, "");
 			Assert.AreEqual(_home.form1.Password_Textbox.Text, "");
 		}
-
+		/*
 		[Test]
 		public void Test_Emergency_Request_Works()
 		{
 			_form1 = new Form1();
 			_mysql = new Mysql_Connect();
-			count = _mysql.Count("SELECT COUNT (*) FROM NEWTimedRequests");
-			_form1.UserIDProperty = "7";
-			_form1.FirstNameProperty = "Jordan";
-			_form1.LastNameProperty = "de Carheil";
-			_form1.SectionProperty = "A3";
-			_form1.RoomProperty = "3";
+			_form1.UserIDProperty = "5";
+			_form1.FirstNameProperty = "resident";
+			_form1.LastNameProperty = "Burii";
+		
+	
 			_home = new HomePage(_form1, _mysql);
 			_home.button3_Click(new object(), EventArgs.Empty);
-			newCount = _mysql.Count("SELECT COUNT (*) FROM NEWTimedRequests");
-			Assert.AreNotEqual(count, newCount);
+
+			Assert.AreNotEqual(_home._status, "success");
 		}
+		*/
 	}
 }

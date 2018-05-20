@@ -28,7 +28,8 @@ namespace MedicTalk
 		public string _section;
 		public Mysql_Connect _connect;
 		private bool _commandResult;
-		private string User_Id;List<string> Keywords;
+		private string User_Id;
+		List<string> Keywords;
 		List<string> Parameters;
 		List<string> ParameterValues;
 		
@@ -64,7 +65,7 @@ namespace MedicTalk
 
 	
 
-        private void Login_Click(object sender, EventArgs e)
+        public void Login_Click(object sender, EventArgs e)
         {
 			User_Name = Username_Textbox.Text;
 			Password = Password_Textbox.Text;

@@ -19,7 +19,8 @@ namespace MedicTalk
 		public Mysql_Connect _connect;
 		public Request_Emergency _emergencyRequest;
 		public Visitor _visitor;
-
+		public System.Windows.Forms.DialogResult confirm;
+		public string _status;
 		public HomePage(Form1 form1, Mysql_Connect connect)
 		{
 			this.form1 = form1;
@@ -45,15 +46,16 @@ namespace MedicTalk
 		//Logout button
 		public void button4_Click(object sender, EventArgs e)
 		{
-			var _confirm = MessageBox.Show("Are you sure you want to log out?", "Confirm logout", MessageBoxButtons.YesNo);
+			confirm = MessageBox.Show("Are you sure you want to log out?", "Confirm logout", MessageBoxButtons.YesNo);
 
-			if (_confirm == DialogResult.Yes)
+			if (confirm == DialogResult.Yes)
 			{
-				this.Hide();
-				form1.Logout();
+				
 				form1.UserNameProperty = "";
 				form1.PasswordProperty = "";
 				form1.UserIDProperty = "0";
+				this.Hide();
+				form1.Logout();
 			}
 			
 		}
@@ -120,6 +122,7 @@ namespace MedicTalk
 		{
 			MessageBox.Show("A nurse will be with you as soon as possible");
 			_emergencyRequest.CallRequest();
+			_status = "Success";
 		}
 	}
 }

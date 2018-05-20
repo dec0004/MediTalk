@@ -85,10 +85,12 @@
     <Compile Include="Forms\List_Of_Requests.Designer.cs">
       <DependentUpon>List_Of_Requests.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomePageTest.cs" />
+    <Compile Include="Tests\Alarm_test.cs" />
+    <Compile Include="Tests\HomePageTest.cs" />
     <Compile Include="Mysql_Connect.cs" />
     <Compile Include="Mysql_User_Handler.cs" />
-    <Compile Include="Mysql_User_Handler_Unittest.cs" />
+    <Compile Include="Tests\Mysql_User_Handler_Unittest.cs" />
+    <Compile Include="Tests\Order_Food_Test.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\Request_Emergency.cs" />
@@ -105,7 +107,8 @@
       <DependentUpon>Visitor.cs</DependentUpon>
     </Compile>
     <Compile Include="Requests_Handler.cs" />
-    <Compile Include="Requests_Handler_Unittest.cs" />
+    <Compile Include="Tests\Requests_Handler_Unittest.cs" />
+    <Compile Include="Tests\Shower_test.cs" />
     <EmbeddedResource Include="Forms\Alarm.resx">
       <DependentUpon>Alarm.cs</DependentUpon>
     </EmbeddedResource>

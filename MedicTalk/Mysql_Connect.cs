@@ -167,7 +167,6 @@ namespace MedicTalk
 					}
 					
 				}
-
 			}
 			this.CloseConnection();
 			return rows;

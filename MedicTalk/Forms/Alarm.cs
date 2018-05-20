@@ -53,7 +53,7 @@ namespace MedicTalk
 		}
 
 		// Once user has clicked on submit
-		private void Submit_Button_Click(object sender, EventArgs e)
+		public void Submit_Button_Click(object sender, EventArgs e)
 		{
 			if (Hour_Box.Text == "Hour" || Minute_Box.Text == "Minutes")
 			{
@@ -100,7 +100,7 @@ namespace MedicTalk
 		}
 
 		// Load all alarms
-		private void Display_Alarms()
+		public void Display_Alarms()
 		{
 			Requests_Handler.Show_Alarms();
 			AlarmsList.DataSource = Requests_Handler.DataTable;
@@ -110,6 +110,11 @@ namespace MedicTalk
 		{
 			MessageBox.Show("A nurse will be with you as soon as possible");
 			_emergencyRequest.CallRequest();
+		}
+
+		private void AlarmsList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
 		}
 	}
 }
