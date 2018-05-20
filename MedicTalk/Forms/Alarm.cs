@@ -103,7 +103,7 @@ namespace MedicTalk
 		public void Display_Alarms()
 		{
 			Requests_Handler.Show_Alarms();
-			AlarmsList.DataSource = Requests_Handler.DataTable;
+			AlarmsList.DataSource = Requests_Handler.DataTable1;
 		}
 
 		private void button3_Click(object sender, EventArgs e)
