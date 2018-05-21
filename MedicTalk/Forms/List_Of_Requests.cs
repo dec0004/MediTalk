@@ -34,7 +34,7 @@ namespace MedicTalk
         /// <summary>
         /// Used to display all requests onto a list
         /// </summary>
-        private void Display_Lists()
+        public void Display_Lists()
         {
             // Show requests for food
             Requests_Handler.Show_Requests();
@@ -50,7 +50,7 @@ namespace MedicTalk
         /// Signals that a request has been completed, therefore it no longer
         /// has to display on the list
         /// </summary>
-        private void FoodRequest_Completed(object sender, DataGridViewCellEventArgs e)
+        public void FoodRequest_Completed(object sender, DataGridViewCellEventArgs e)
         {
 			
 			rowToDel = RequestsList.Rows[e.RowIndex].Cells[10].Value.ToString();
@@ -92,7 +92,7 @@ namespace MedicTalk
 			
 		}
 
-		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			timedRowToDel = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
 
